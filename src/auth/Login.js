@@ -4,13 +4,10 @@ import axios from 'axios';
 import SERVER_URL from '../constants/server';
 
 class Login extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      email: '',
-      password: ''
-    };
-  }
+  state = {
+    email: '',
+    password: ''
+  };
 
   handleEmailChange = (e) => { this.setState({ email: e.target.value }); }
 

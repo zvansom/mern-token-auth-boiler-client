@@ -11,20 +11,17 @@ import Profile from './Profile';
 import Signup from './auth/Signup';
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      user: null
-    }
+  state = {
+    user: null
   }
-
+  
   componentDidMount = () => {
     console.log('component did mount!');
     this.getUser();
   }
 
   getUser = () => {
-    var token = localStorage.getItem('mernToken');
+    const token = localStorage.getItem('mernToken');
     if(token){
       console.log('token found in LS', token);
       // There is a token in localStorage. Try to validate it!
@@ -48,7 +45,6 @@ class App extends Component {
     }
     else {
       console.log('No token was found');
-      localStorage.removeItem('mernToken');
       this.setState({
         user: null
       });
